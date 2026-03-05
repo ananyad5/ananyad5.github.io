@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-teal-muted: #83c5be;
+  --color-beige-muted: #fefae0;
+  --color-beige-bg: #d5c8b5;
+  --color-beige-card: #e3d5ca;
+  --color-dark-bg: #18181b;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-color: var(--color-beige-bg);
+    --text-color: #27272a;
+  }
+
+  .dark {
+    --bg-color: var(--color-dark-bg);
+    --text-color: var(--color-beige-bg);
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+  }
+}
