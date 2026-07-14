@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Ananya</title>
+<meta name="description" content="Projects by Ananya — solvers, agents, compilers, and computer vision experiments.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Ananya</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="projects.html" aria-current="page">Projects</a></li>
+      <li><a href="blog.html">Writing</a></li>
+      <li><a href="other.html">Other</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <header class="page-header wrap">
+    <p class="eyebrow">01 — Build</p>
+    <h1>Projects</h1>
+    <p>A running list of things I've built — most grounded in probability,
+    information theory, or a stubborn refusal to accept the naive solution.
+    <!-- Edit this intro freely. --></p>
+  </header>
+
+  <section class="page-body wrap">
+    <div class="item-list">
+
+      <div class="item">
+        <div class="meta">2026<br>Personal</div>
+        <div>
+          <h3>Entropy-Guided Wordle Solver</h3>
+          <p>A Wordle solver that picks each guess by maximizing expected
+          information gain (Shannon entropy) over the remaining word set,
+          rather than by letter frequency heuristics.</p>
+          <div class="stack"><span>Python</span><span>Information Theory</span><span>NumPy</span></div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">Repo</a>
+            <a href="#" target="_blank" rel="noopener">Write-up</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="meta">2025–26<br>Research</div>
+        <div>
+          <h3>Information-Theoretic Analysis of Model Distillation</h3>
+          <p>First-author research under Dr. Sanghamitra Dutta studying
+          knowledge distillation through an information-theoretic lens —
+          how much of a teacher model's signal actually survives compression.</p>
+          <div class="stack"><span>PyTorch</span><span>Information Theory</span><span>Research</span></div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">Paper (in prep)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="meta">2025<br>Personal</div>
+        <div>
+          <h3>PokerAI</h3>
+          <p>A poker-playing agent built around Counterfactual Regret
+          Minimization (CFR) to approximate Nash-equilibrium strategies
+          in imperfect-information game trees.</p>
+          <div class="stack"><span>C++</span><span>Game Theory</span><span>CFR</span></div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="meta">2025<br>Personal</div>
+        <div>
+          <h3>Lambda Compiler</h3>
+          <p>A small compiler for a lambda-calculus-based language, written
+          in OCaml — lexing, parsing, type inference, and codegen from scratch.</p>
+          <div class="stack"><span>OCaml</span><span>Compilers</span><span>Type Systems</span></div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="meta">2026<br>Personal</div>
+        <div>
+          <h3>MediaPipe Rock-Paper-Scissors Bot</h3>
+          <p>A first foray into computer vision — real-time hand-gesture
+          recognition to play rock-paper-scissors against a live camera feed.</p>
+          <div class="stack"><span>Python</span><span>MediaPipe</span><span>Computer Vision</span></div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">Repo</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span data-year></span> Ananya. Built with plain HTML, CSS, and JS.</p>
+    <div class="foot-links">
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

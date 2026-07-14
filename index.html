@@ -1,13 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>website</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ananya — Software Engineer &amp; Researcher</title>
+<meta name="description" content="Personal site of Ananya — projects, writing, and research at the intersection of information theory and machine learning.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Ananya</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Writing</a></li>
+      <li><a href="other.html">Other</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="hero wrap">
+    <div>
+      <p class="eyebrow">Ananya · CS &amp; Math, University of Maryland '26</p>
+      <h1>Building things that reason<br>about their own uncertainty.</h1>
+      <p class="role">Software Engineer — ML · Systems · Quant</p>
+      <p class="lede">
+        I like problems where information theory, probability, and code
+        collide — from entropy-guided solvers to distillation research.
+        Currently looking for full-time roles.
+      </p>
+      <div class="hero-ctas">
+        <a href="projects.html" class="btn btn-primary">See my projects</a>
+        <a href="contact.html" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="focus-tags">
+        <span class="tag">Machine Learning</span>
+        <span class="tag gold">Information Theory</span>
+        <span class="tag">Competitive Programming</span>
+        <span class="tag gold">Systems &amp; Tools</span>
+      </div>
+    </div>
+
+    <div class="tile-demo">
+      <div class="tile-row" id="tileRow">
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+        <span class="tile"></span>
+      </div>
+      <p class="tile-caption">an entropy-guided solver, converging</p>
+    </div>
+  </section>
+
+  <section class="destinations wrap">
+    <div class="section-head">
+      <h2>Where to go from here</h2>
+    </div>
+    <div class="card-grid">
+
+      <a href="projects.html" class="dest-card">
+        <span class="kicker">01 — Build</span>
+        <h3>Projects</h3>
+        <p>Things I've shipped — solvers, agents, compilers, and the occasional
+        computer-vision experiment.</p>
+        <span class="go">View projects <span class="arrow">→</span></span>
+      </a>
+
+      <a href="blog.html" class="dest-card">
+        <span class="kicker">02 — Think</span>
+        <h3>Writing</h3>
+        <p>Notes on information theory, ML, and whatever math problem
+        I fell into that week.</p>
+        <span class="go">Read the writing <span class="arrow">→</span></span>
+      </a>
+
+      <a href="other.html" class="dest-card">
+        <span class="kicker">03 — Wander</span>
+        <h3>Other</h3>
+        <p>Competitive programming, reading, and things that don't fit
+        neatly into a resume.</p>
+        <span class="go">Take a look <span class="arrow">→</span></span>
+      </a>
+
+      <a href="contact.html" class="dest-card">
+        <span class="kicker">04 — Connect</span>
+        <h3>Contact</h3>
+        <p>Reach out about roles, collaborations, or an interesting proof
+        you want to argue about.</p>
+        <span class="go">Say hello <span class="arrow">→</span></span>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span data-year></span> Ananya. Built with plain HTML, CSS, and JS.</p>
+    <div class="foot-links">
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
 </html>

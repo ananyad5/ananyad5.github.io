@@ -1,114 +1,79 @@
-# Personal Developer Portfolio
+# Personal site
 
-A minimalist, responsive developer portfolio built with modern web technologies. This project was created as both a professional portfolio and a learning exercise in modern frontend development.
+A small, static site — plain HTML/CSS/JS, no build step, no framework.
+Built to host for free on GitHub Pages.
 
-## 🚀 Built With
-
-- **React 19** - UI Library
-- **Vite 6** - Next Generation Frontend Tooling (Lightning fast HMR & builds)
-- **Tailwind CSS 4** - Utility-first CSS framework for rapid styling
-- **React Router 7** - Declarative routing for React
-- **Framer Motion** - Production-ready animations
-- **Lucide React** - Beautiful, consistent icon toolkit
-
-## 📂 Project Structure
-
-The codebase is organized to be beginner-friendly, modular, and easy to maintain:
+## File structure
 
 ```
-├── public/                 # Static assets (favicon, images, etc.)
-├── src/
-│   ├── components/         # Reusable UI components
-│   │   ├── Footer.jsx      # Bottom footer with social links
-│   │   ├── Navbar.jsx      # Top navigation and mobile menu
-│   │   └── ProjectCard.jsx # Reusable card for project items
-│   ├── context/            # Global React Contexts
-│   │   └── ThemeContext.jsx# Manages Light/Dark mode state
-│   ├── pages/              # Top-level page components
-│   │   ├── Contact.jsx
-│   │   ├── Education.jsx
-│   │   ├── Experiments.jsx
-│   │   ├── Home.jsx
-│   │   ├── Projects.jsx
-│   │   └── Writing.jsx
-│   ├── App.jsx             # Main layout and routing configuration
-│   ├── index.css           # Tailwind imports and global theme variables
-│   └── main.jsx            # Application entry point
-├── package.json            # Dependencies and scripts
-└── vite.config.js          # Vite configuration with Tailwind plugin
+index.html          homepage
+projects.html        project list
+blog.html            writing / articles list
+other.html            competitive programming, reading, misc
+contact.html         email + links
+assets/css/style.css  all styling (colors, type, layout — one file)
+assets/js/script.js   mobile nav + the hero tile animation
 ```
 
-## 🛠️ Running Locally
+## Deploy to GitHub Pages (free)
 
-Follow these steps to run the website on your local machine:
-
-1. **Install dependencies:**
-   Make sure you have Node.js installed, then run:
+1. Create a new repository on GitHub.
+   - If you want the site at `https://<your-username>.github.io`, name the
+     repo exactly `<your-username>.github.io`.
+   - Any other repo name works too — it'll just be served at
+     `https://<your-username>.github.io/<repo-name>/`.
+2. Push these files to the repo's `main` branch, keeping the folder
+   structure as-is (don't flatten `assets/`).
    ```bash
-   npm install
+   cd personal-site
+   git init
+   git add .
+   git commit -m "Initial site"
+   git branch -M main
+   git remote add origin https://github.com/<your-username>/<repo-name>.git
+   git push -u origin main
    ```
+3. On GitHub: go to the repo → **Settings → Pages**.
+4. Under "Build and deployment", set **Source** to **Deploy from a branch**,
+   branch **main**, folder **/ (root)**. Save.
+5. GitHub will give you a URL (usually live within a minute or two).
 
-2. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+No Jekyll config is needed — this is plain static HTML, so GitHub Pages
+will serve it as-is.
 
-3. **View the site:**
-   Open your browser and navigate to the URL provided in the terminal (usually `http://localhost:5173`).
+## Things to edit first
 
-4. **Build for production:**
-   To create an optimized production build, run:
-   ```bash
-   npm run build
-   ```
-   This will generate a `dist` directory with your minified assets.
+- **Your name / last name** — `index.html`, the `<h1>` and `<title>` tags
+  on every page currently just say "Ananya."
+- **Email** — `contact.html`, replace `you@example.com` (in both the link
+  and the visible text).
+- **Social links** — GitHub/LinkedIn/Codeforces `#` placeholders appear in
+  the footer of every page and on `contact.html`.
+- **Project links** — `projects.html`, each project has `Repo` / `Write-up`
+  links currently pointing to `#`.
+- **Blog posts** — `blog.html` has three draft placeholders; replace with
+  real posts, or point "Read post" links to an external blog (Substack,
+  Medium, Hashnode) if you'd rather not host posts here.
+- **Other page** — `other.html` blocks are intentionally generic
+  (Codeforces handle/rating, current reading, project ideas) — fill in
+  what's actually true.
 
-## 🚢 Deployment to GitHub Pages
+## Changing the color palette
 
-To host this website for free on GitHub Pages:
+Everything lives in `:root` at the top of `assets/css/style.css`:
 
-1. **Update `vite.config.js`:**
-   If your repository is named something other than `<username>.github.io` (e.g., `portfolio`), you need to add a `base` to `vite.config.js`:
-   ```javascript
-   export default defineConfig({
-     base: '/portfolio/', // Replace with your repo name if necessary
-     plugins: [react(), tailwindcss()],
-   })
-   ```
+```css
+--bg: #f3f3ef;        /* page background */
+--ink: #1e231f;        /* main text */
+--accent: #35594f;    /* primary accent — pine green */
+--gold: #a6863b;        /* secondary accent — ochre */
+```
 
-2. **Install `gh-pages` package:**
-   ```bash
-   npm install gh-pages --save-dev
-   ```
+Change those six or so values and the whole site retones — nothing else
+needs to change.
 
-3. **Update `package.json` scripts:**
-   Add these two scripts to your `package.json`:
-   ```json
-   "scripts": {
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d dist",
-     // ... other scripts
-   }
-   ```
+## Adding a real blog later
 
-4. **Deploy:**
-   Run the deployment command:
-   ```bash
-   npm run deploy
-   ```
-   Go to your GitHub repository settings -> Pages, and ensure the source is set to the `gh-pages` branch.
-
-## 💡 Suggestions for Extending the Site
-
-Here are some ways you can continue learning and iterating on this portfolio:
-
-1. **MDX Blog Integration (`vite-plugin-mdx`)**:
-   Instead of hardcoding the `Writing` page articles, set up MDX to allow you to write blog posts in pure Markdown while still embedding React components inside them.
-2. **Dynamic Project Data Retrieval**:
-   Move the static arrays of data (like `projectsData` or `educationData`) into a headless CMS like Contentful, Sanity.io, or even just a remote JSON file. Then use `useEffect` or React Query to fetch them.
-3. **Advanced Animations**:
-   Use Framer Motion's `AnimateSharedLayout` or `useScroll` hooks to create more complex page transition animations or scroll-linked effects.
-4. **Dark Mode Polish**:
-   Customize the Tailwind `@theme` configuration in `index.css` to add more intricate color palettes for dark mode.
-5. **Contact Form Component**:
-   Integrate a service like Formspree or EmailJS into the `Contact` page to allow visitors to send you messages directly from the website without opening their email client.
+If you outgrow the static placeholder list in `blog.html`, GitHub Pages
+supports Jekyll natively (a `_posts/` folder with Markdown files, zero
+extra hosting) — worth switching to once you're writing regularly.
